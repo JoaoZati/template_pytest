@@ -2,7 +2,9 @@ lenguage: python
 python:
   - 3.9
 install:
-  - pip install -r requirements-dev.txt
+  - pip install -r requirements-dev.txt codecov
 script:
   - flake8
-  - pytest template_pytest
+  - pytest template_pytest/ --cov=template_pytest
+after_success:
+  - codecov
