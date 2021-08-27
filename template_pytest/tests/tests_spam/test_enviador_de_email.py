@@ -13,9 +13,9 @@ def test_criar_enviador_de_email():
 def test_remetente(destinatario):
     enviador = Enviador()
     resultado = enviador.enviar(destinatario,
-                    'joaoribeiro@alunos.utfpr.edu.br',
-                    'Cursos Python Pro',
-                    'Turma do Iury')
+                                'joaoribeiro@alunos.utfpr.edu.br',
+                                'Cursos Python Pro',
+                                'Turma do Iury')
 
     assert destinatario in resultado
 
