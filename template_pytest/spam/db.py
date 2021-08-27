@@ -5,6 +5,7 @@ class Conexao:
     def __init__(self):
         sleep(2)
 
+
     def gerar_sessao(self):
         return Sessao()
 
