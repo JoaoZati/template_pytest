@@ -30,4 +30,3 @@ def test_remetente_invalido(destinatario):
                         'joaoribeiro@alunos.utfpr.edu.br',
                         'Cursos Python Pro',
                         'Turma do Iury')
-#teste é executado em todos os parametros
