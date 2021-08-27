@@ -3,13 +3,14 @@ from template_pytest.spam.db import Conexao
 from template_pytest.spam.modelos import Usuario
 
 
-@pytest.fixture
+@pytest.fixture(scope='session')
 def conexao():
-    #setup
+    # setup
     conexao_obj = Conexao()
     yield conexao_obj
-    #Tear Down
+    # Tear Down
     conexao_obj.fechar()
+
 
 @pytest.fixture
 def sessao(conexao):
@@ -23,7 +24,6 @@ def teste_salvar_usuario(sessao):
     usuario = Usuario(nome='Joao')
     sessao.salvar(usuario)
     assert isinstance(usuario.id, int)
-
 
 
 def teste_listar_usuario(sessao):
