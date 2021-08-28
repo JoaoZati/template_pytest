@@ -4,6 +4,7 @@ import pytest as pytest
 
 from template_pytest import github_api
 
+
 @pytest.fixture
 def avatar_url(mocker):
     resp_mock = Mock()
@@ -17,6 +18,7 @@ def avatar_url(mocker):
     get_mock.return_value = resp_mock
     return url
 
+
 def test_buscar_avatar(avatar_url):
     url = github_api.buscar_avatar_usuario('renzon')
     assert avatar_url == url
@@ -25,4 +27,3 @@ def test_buscar_avatar(avatar_url):
 def test_buscar_avatar_integracao():
     url = github_api.buscar_avatar_usuario('JoaoZati')
     assert 'https://avatars.githubusercontent.com/u/35962516?v=4' == url
-
